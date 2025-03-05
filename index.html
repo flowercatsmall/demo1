@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生日动画剧情</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<!-- 首页选择人物 -->
+<div id="character-selection" class="center-content">
+  <h1>请选择人物</h1>
+  <img src="character.jpg" alt="人物照片" id="character-img">
+</div>
+
+<!-- 动画剧情容器 -->
+<div id="animation-container" class="center-content" style="display: none;">
+  <div id="animation-scene">
+    <!-- 端着紫色蛋糕的人物图片 -->
+    <img src="person_with_cake.png" alt="端着蛋糕的人物" id="person-with-cake-img">
+    <!-- 主角拿着手机的图片 -->
+    <img src="person_with_phone.png" alt="主角拿着手机" id="protagonist-with-phone-img">
+  </div>
+</div>
+
+<!-- 生日礼物箱子 -->
+<div id="gift-box-container" style="display: none;">
+  <img src="gift_box.gif" alt="生日礼物箱子" id="gift-box" onclick="openGiftBox()">
+</div>
+
+<!-- 喜欢与否的询问 -->
+<div id="like-question" style="display: none;">
+  <p>你喜欢这个礼物吗？</p>
+  <button onclick="handleLike(true)">1. 喜欢</button>
+  <button onclick="handleLike(false)">2. 不喜欢</button>
+  <div id="error-message" style="display: none; color: red; margin-top: 10px;">不可以不喜欢</div>
+</div>
+
+<div></div>
+<!-- 点击礼物盒子后弹出的图片 -->
+<div id="popup-image-container" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); justify-content: center; align-items: center;">
+  <img src="img1.jpg" alt="弹出的图片" id="popup-image">
+  <span id="close-popup" onclick="closePopup()" style="position: absolute; top: 10px; right: 10px; color: white; font-size: 30px; cursor: pointer;">&times;</span>
+</div>
+<!-- 喜欢之后显示的照片 -->
+<div id="liked-photo" style="display: none;">
+  <img src="liked-photo.jpg" alt="喜欢之后的照片">
+</div>
+
+<!-- 请许愿按钮 -->
+<button id="wish-button" style="display: none;" onclick="startWishTimer()">请许愿</button>
+
+<!-- 许愿结束后显示的图片和文字 -->
+<div id="wish-result" style="display: none;">
+  <img src="wish_result.jpg" alt="许愿结果图片" id="wish-result-img">
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>

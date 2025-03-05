@@ -1,0 +1,259 @@
+/* 使用 Poppins 字体 */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #f4f4f9, #e0e0e0);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#character-img {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#character-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#character-img:active {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+#animation-scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#person-with-cake-img {
+    position: absolute;
+    left: -200px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 20%;
+    height: auto;
+    animation: movePersonWithCake 3s forwards;
+}
+
+@keyframes movePersonWithCake {
+    to {
+        left: 40%;
+    }
+}
+
+#protagonist-with-phone-img {
+    position: absolute;
+    right: -200px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 20%;
+    height: auto;
+    animation: moveProtagonist 3s forwards;
+}
+
+@keyframes moveProtagonist {
+    to {
+        right: 40%;
+    }
+}
+
+#like-question {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#like-question p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#like-question button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#like-question button:nth-child(2) {
+    background-color: #2ecc71;
+    color: white;
+}
+
+#like-question button:nth-child(3) {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#like-question button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#liked-photo {
+    display: none;
+    text-align: center;
+}
+
+#liked-photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+#liked-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#wish-button {
+    display: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+#wish-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#wish-result {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#wish-result-img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+#wish-result-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#gift-box-container {
+    display: none;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#gift-box {
+    cursor: pointer;
+    max-width: 30%;
+    height: auto;
+    transition: all 0.2s ease;
+}
+
+#gift-box:hover {
+    transform: scale(1.1);
+}
+
+#popup-image-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#popup-image {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/*!* 媒体查询，针对小屏幕设备优化 *!*/
+/*@media (max - width: 768px) {*/
+/*    h1 {*/
+/*        font-size: 2rem;*/
+/*    }*/
+
+/*    #like-question p {*/
+/*        font-size: 1.2rem;*/
+/*    }*/
+
+/*    #like-question button {*/
+/*        padding: 10px 20px;*/
+/*        font-size: 0.9rem;*/
+/*    }*/
+
+/*    #wish-button {*/
+/*        padding: 10px 20px;*/
+/*        font-size: 0.9rem;*/
+/*    }*/
+
+/*    #gift-box {*/
+/*        max-width: 50%;*/
+/*    }*/
+/*}*/
